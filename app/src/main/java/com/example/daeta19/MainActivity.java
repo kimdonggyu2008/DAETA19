@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton btn_notification;
     private ImageButton btn_setting;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
