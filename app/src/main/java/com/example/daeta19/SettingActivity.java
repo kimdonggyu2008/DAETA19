@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class SettingActivity extends AppCompatActivity {
@@ -90,11 +91,40 @@ public class SettingActivity extends AppCompatActivity {
         final View dialogLayout = dialog.inflate(R.layout.activity_view_style, null);
         final Dialog myDialog = new Dialog(this);
 
+
+
         myDialog.setContentView(dialogLayout);
         myDialog.show();
 
         Button btn_ok = (Button)dialogLayout.findViewById(R.id.btn_ok);
         Button btn_cancel = (Button)dialogLayout.findViewById(R.id.btn_cancel);
+
+        ImageView boardimg = (ImageView)dialogLayout.findViewById(R.id.img_boardtype);
+        ImageView albumimg = (ImageView)dialogLayout.findViewById(R.id.img_albumtype);
+     final    ImageView board = (ImageView)dialogLayout.findViewById(R.id.img_board);
+        final ImageView album = (ImageView)dialogLayout.findViewById(R.id.img_album);
+
+        albumimg.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                //OK 누르면
+                board.setImageResource(R.drawable.ic_radio_button_unchecked_black_24dp);
+                album.setImageResource(R.drawable.ic_radio_button_checked_black_24dp);
+            }
+        });
+
+        boardimg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                album.setImageResource(R.drawable.ic_radio_button_unchecked_black_24dp);
+                board.setImageResource(R.drawable.ic_radio_button_checked_black_24dp);
+            }
+        });
+
+
+
 
         btn_ok.setOnClickListener(new View.OnClickListener()
         {
